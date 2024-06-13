@@ -1,3 +1,10 @@
+//
+//  SlackApi.swift
+//
+//  Created by Slack Candidate on 2024-06-13.
+//
+
+import Combine
 import Foundation
 
 // MARK: - Interfaces
@@ -7,13 +14,13 @@ protocol SlackAPIInterface {
      * Fetches users from search.team API that match the search term
      */
     func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void)
+    
+    func fetchSlackEmployees(_ searchTerm: String) -> AnyPublisher<SlackEmployeesSearchResponse, Error>
 }
 
 class SlackApi: SlackAPIInterface {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
-
-    private let baseURLString =  "https://mobile-code-exercise-a7fb88c7afa6.herokuapp.com/search"
 
     /**
      A global shared SlackApi Instance.
@@ -29,7 +36,7 @@ class SlackApi: SlackAPIInterface {
     func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void) {
         dataTask?.cancel()
 
-        guard var urlComponents = URLComponents(string: baseURLString) else { return }
+        guard var urlComponents = URLComponents(string: Constants.slackSearchEndpoint) else { return }
 
         let queryItemQuery = URLQueryItem(name: "query", value: searchTerm)
         urlComponents.queryItems = [queryItemQuery]
@@ -70,5 +77,26 @@ class SlackApi: SlackAPIInterface {
         }
 
         dataTask?.resume()
+    }
+    
+    func fetchSlackEmployees(_ searchTerm: String) -> AnyPublisher<SlackEmployeesSearchResponse, Error> {
+        guard var url = SlackSearchRequestURL.searchSlackEmployeesURL(for: searchTerm) else {
+            return Fail(error: SlackSearchResponseError.networking).eraseToAnyPublisher()
+        }
+        
+        return defaultSession.dataTaskPublisher(for: url)
+            .tryMap { (data: Data, response: URLResponse) in
+                guard let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 else {
+                    throw SlackSearchResponseError.networking
+                }
+                return data
+            }
+            .decode(type: SlackEmployeesSearchResponse.self, decoder: JSONDecoder())
+            .tryCatch { _ in
+                Fail(error: SlackSearchResponseError.decoding)
+            }.eraseToAnyPublisher()
+        
+        
     }
 }

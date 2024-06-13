@@ -1,0 +1,10 @@
+/* 
+  LocalizableStrings.strings
+  CodingExercise
+
+  Created by Slack Candidate on 2024-06-13.
+  Copyright © 2024 slack. All rights reserved.
+*/
+
+"Search Slack Employees" = "Search Slack Employees";
+"Search" = "Search";

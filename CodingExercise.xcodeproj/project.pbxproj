@@ -9,16 +9,26 @@
 /* Begin PBXBuildFile section */
 		0FEDCF0524F89B5200358051 /* denylist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0FEDCF0424F89B5200358051 /* denylist.txt */; };
 		6A29FD0520E6EB0F004885EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD0420E6EB0F004885EC /* AppDelegate.swift */; };
-		6A29FD0720E6EB0F004885EC /* AutocompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD0620E6EB0F004885EC /* AutocompleteViewController.swift */; };
+		6A29FD0720E6EB0F004885EC /* SlackSearchEmployeesAutocompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD0620E6EB0F004885EC /* SlackSearchEmployeesAutocompleteViewController.swift */; };
 		6A29FD0C20E6EB0F004885EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A29FD0B20E6EB0F004885EC /* Assets.xcassets */; };
 		6A29FD1A20E6EB10004885EC /* CodingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD1920E6EB10004885EC /* CodingExerciseTests.swift */; };
 		6A29FD2720E6EC1F004885EC /* SlackEmployeesSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD2620E6EC1F004885EC /* SlackEmployeesSearchResponseModel.swift */; };
 		6A29FD2920E6EC2F004885EC /* SlackAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD2820E6EC2F004885EC /* SlackAPIService.swift */; };
-		6A29FD2D20E6EC79004885EC /* UserSearchResultDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD2C20E6EC79004885EC /* UserSearchResultDataProvider.swift */; };
+		6A29FD2D20E6EC79004885EC /* SlackSearchEmployeesResultDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FD2C20E6EC79004885EC /* SlackSearchEmployeesResultDataProvider.swift */; };
 		6AC4866E21F2AB700068D741 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC4866D21F2AB700068D741 /* LaunchScreen.storyboard */; };
 		6AE88E35222759D90032677C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AE88E33222759D80032677C /* Lato-Bold.ttf */; };
 		6AE88E36222759D90032677C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AE88E34222759D90032677C /* Lato-Regular.ttf */; };
-		6AF5D92820EC255B008186C3 /* AutocompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5D92720EC255B008186C3 /* AutocompleteViewModel.swift */; };
+		6AF5D92820EC255B008186C3 /* SlackSearchEmployeesAutocompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5D92720EC255B008186C3 /* SlackSearchEmployeesAutocompleteViewModel.swift */; };
+		8A1019B62C1B5E2300A0A9F3 /* SlackSearchEmployeesAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019B52C1B5E2300A0A9F3 /* SlackSearchEmployeesAppCoordinator.swift */; };
+		8A1019B82C1B5F3300A0A9F3 /* SlackSearchEmployeesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019B72C1B5F3300A0A9F3 /* SlackSearchEmployeesCoordinator.swift */; };
+		8A1019BC2C1B65B500A0A9F3 /* LocalizableStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A1019BE2C1B65B500A0A9F3 /* LocalizableStrings.strings */; };
+		8A1019C02C1B65E900A0A9F3 /* SlackSearchEmployeesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019BF2C1B65E900A0A9F3 /* SlackSearchEmployeesConstants.swift */; };
+		8A1019C22C1B685A00A0A9F3 /* SlackEmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019C12C1B685A00A0A9F3 /* SlackEmployeeTableViewCell.swift */; };
+		8A1019C52C1B930500A0A9F3 /* SlackSearchResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019C42C1B930500A0A9F3 /* SlackSearchResponseError.swift */; };
+		8A1019C72C1B935A00A0A9F3 /* SlackSearchRequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019C62C1B935A00A0A9F3 /* SlackSearchRequestURL.swift */; };
+		8A1019C92C1B982000A0A9F3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019C82C1B982000A0A9F3 /* Logger.swift */; };
+		8A1019CB2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */; };
+		8A1019CD2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +45,7 @@
 		0FEDCF0424F89B5200358051 /* denylist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = denylist.txt; sourceTree = "<group>"; };
 		6A29FD0120E6EB0F004885EC /* CodingExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A29FD0420E6EB0F004885EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A29FD0620E6EB0F004885EC /* AutocompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteViewController.swift; sourceTree = "<group>"; };
+		6A29FD0620E6EB0F004885EC /* SlackSearchEmployeesAutocompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchEmployeesAutocompleteViewController.swift; sourceTree = "<group>"; };
 		6A29FD0B20E6EB0F004885EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A29FD1020E6EB0F004885EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A29FD1520E6EB10004885EC /* CodingExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,11 +53,21 @@
 		6A29FD1B20E6EB10004885EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A29FD2620E6EC1F004885EC /* SlackEmployeesSearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackEmployeesSearchResponseModel.swift; sourceTree = "<group>"; };
 		6A29FD2820E6EC2F004885EC /* SlackAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackAPIService.swift; sourceTree = "<group>"; };
-		6A29FD2C20E6EC79004885EC /* UserSearchResultDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchResultDataProvider.swift; sourceTree = "<group>"; };
+		6A29FD2C20E6EC79004885EC /* SlackSearchEmployeesResultDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchEmployeesResultDataProvider.swift; sourceTree = "<group>"; };
 		6AC4866D21F2AB700068D741 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AE88E33222759D80032677C /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		6AE88E34222759D90032677C /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
-		6AF5D92720EC255B008186C3 /* AutocompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteViewModel.swift; sourceTree = "<group>"; };
+		6AF5D92720EC255B008186C3 /* SlackSearchEmployeesAutocompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchEmployeesAutocompleteViewModel.swift; sourceTree = "<group>"; };
+		8A1019B52C1B5E2300A0A9F3 /* SlackSearchEmployeesAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchEmployeesAppCoordinator.swift; sourceTree = "<group>"; };
+		8A1019B72C1B5F3300A0A9F3 /* SlackSearchEmployeesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchEmployeesCoordinator.swift; sourceTree = "<group>"; };
+		8A1019BD2C1B65B500A0A9F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizableStrings.strings; sourceTree = "<group>"; };
+		8A1019BF2C1B65E900A0A9F3 /* SlackSearchEmployeesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchEmployeesConstants.swift; sourceTree = "<group>"; };
+		8A1019C12C1B685A00A0A9F3 /* SlackEmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackEmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		8A1019C42C1B930500A0A9F3 /* SlackSearchResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchResponseError.swift; sourceTree = "<group>"; };
+		8A1019C62C1B935A00A0A9F3 /* SlackSearchRequestURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSearchRequestURL.swift; sourceTree = "<group>"; };
+		8A1019C82C1B982000A0A9F3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerExtension.swift; sourceTree = "<group>"; };
+		8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +109,8 @@
 		6A29FD0320E6EB0F004885EC /* CodingExercise */ = {
 			isa = PBXGroup;
 			children = (
+				8A1019C32C1B92ED00A0A9F3 /* Networking */,
+				8A1019B92C1B652600A0A9F3 /* Localization */,
 				8A1019B12C1B584200A0A9F3 /* Extensions */,
 				8A1019B02C1B583700A0A9F3 /* Utilities */,
 				8A1019AA2C1B57A800A0A9F3 /* Modules */,
@@ -161,7 +183,8 @@
 		8A1019AC2C1B57C800A0A9F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6A29FD0620E6EB0F004885EC /* AutocompleteViewController.swift */,
+				8A1019C12C1B685A00A0A9F3 /* SlackEmployeeTableViewCell.swift */,
+				6A29FD0620E6EB0F004885EC /* SlackSearchEmployeesAutocompleteViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,7 +192,7 @@
 		8A1019AD2C1B57D700A0A9F3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6AF5D92720EC255B008186C3 /* AutocompleteViewModel.swift */,
+				6AF5D92720EC255B008186C3 /* SlackSearchEmployeesAutocompleteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -177,7 +200,7 @@
 		8A1019AE2C1B57DF00A0A9F3 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				6A29FD2C20E6EC79004885EC /* UserSearchResultDataProvider.swift */,
+				6A29FD2C20E6EC79004885EC /* SlackSearchEmployeesResultDataProvider.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -193,6 +216,8 @@
 		8A1019B02C1B583700A0A9F3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8A1019BF2C1B65E900A0A9F3 /* SlackSearchEmployeesConstants.swift */,
+				8A1019C82C1B982000A0A9F3 /* Logger.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -200,6 +225,8 @@
 		8A1019B12C1B584200A0A9F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */,
+				8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +242,7 @@
 		8A1019B32C1B586800A0A9F3 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				8A1019B52C1B5E2300A0A9F3 /* SlackSearchEmployeesAppCoordinator.swift */,
 			);
 			path = AppCoordinator;
 			sourceTree = "<group>";
@@ -222,8 +250,26 @@
 		8A1019B42C1B587F00A0A9F3 /* ModuleCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				8A1019B72C1B5F3300A0A9F3 /* SlackSearchEmployeesCoordinator.swift */,
 			);
 			path = ModuleCoordinator;
+			sourceTree = "<group>";
+		};
+		8A1019B92C1B652600A0A9F3 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				8A1019BE2C1B65B500A0A9F3 /* LocalizableStrings.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		8A1019C32C1B92ED00A0A9F3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8A1019C42C1B930500A0A9F3 /* SlackSearchResponseError.swift */,
+				8A1019C62C1B935A00A0A9F3 /* SlackSearchRequestURL.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A1019BC2C1B65B500A0A9F3 /* LocalizableStrings.strings in Resources */,
 				6AC4866E21F2AB700068D741 /* LaunchScreen.storyboard in Resources */,
 				6AE88E36222759D90032677C /* Lato-Regular.ttf in Resources */,
 				6A29FD0C20E6EB0F004885EC /* Assets.xcassets in Resources */,
@@ -333,12 +380,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A29FD0720E6EB0F004885EC /* AutocompleteViewController.swift in Sources */,
-				6A29FD2D20E6EC79004885EC /* UserSearchResultDataProvider.swift in Sources */,
+				6A29FD0720E6EB0F004885EC /* SlackSearchEmployeesAutocompleteViewController.swift in Sources */,
+				8A1019C52C1B930500A0A9F3 /* SlackSearchResponseError.swift in Sources */,
+				8A1019C02C1B65E900A0A9F3 /* SlackSearchEmployeesConstants.swift in Sources */,
+				8A1019C22C1B685A00A0A9F3 /* SlackEmployeeTableViewCell.swift in Sources */,
+				6A29FD2D20E6EC79004885EC /* SlackSearchEmployeesResultDataProvider.swift in Sources */,
+				8A1019CD2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift in Sources */,
 				6A29FD2920E6EC2F004885EC /* SlackAPIService.swift in Sources */,
+				8A1019B82C1B5F3300A0A9F3 /* SlackSearchEmployeesCoordinator.swift in Sources */,
 				6A29FD2720E6EC1F004885EC /* SlackEmployeesSearchResponseModel.swift in Sources */,
+				8A1019C72C1B935A00A0A9F3 /* SlackSearchRequestURL.swift in Sources */,
+				8A1019C92C1B982000A0A9F3 /* Logger.swift in Sources */,
+				8A1019CB2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift in Sources */,
 				6A29FD0520E6EB0F004885EC /* AppDelegate.swift in Sources */,
-				6AF5D92820EC255B008186C3 /* AutocompleteViewModel.swift in Sources */,
+				6AF5D92820EC255B008186C3 /* SlackSearchEmployeesAutocompleteViewModel.swift in Sources */,
+				8A1019B62C1B5E2300A0A9F3 /* SlackSearchEmployeesAppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +415,17 @@
 			targetProxy = 6A29FD1620E6EB10004885EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A1019BE2C1B65B500A0A9F3 /* LocalizableStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A1019BD2C1B65B500A0A9F3 /* en */,
+			);
+			name = LocalizableStrings.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6A29FD1C20E6EB10004885EC /* Debug */ = {

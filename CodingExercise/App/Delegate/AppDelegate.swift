@@ -4,18 +4,27 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var appCoordinator: SlackSearchEmployeesAppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // start the app coordinator
+        let navigationController = UINavigationController()
+        appCoordinator = SlackSearchEmployeesAppCoordinator(navigationController: navigationController)
+        appCoordinator?.start()
+        
+        // make navcontroller as a root to the window and make it visible
         window = UIWindow(frame: UIScreen.main.bounds)
-
-        let dataProvider = UserSearchResultDataProvider(slackAPI: SlackApi.shared)
-        let viewModel = AutocompleteViewModel(dataProvider: dataProvider)
-
-        let autocompleteViewController = AutocompleteViewController(viewModel: viewModel)
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = autocompleteViewController
+        window?.rootViewController = navigationController
+        
+        //customize the appearance of the uinavigation bar
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().isTranslucent = true
+
         return true
     }
 

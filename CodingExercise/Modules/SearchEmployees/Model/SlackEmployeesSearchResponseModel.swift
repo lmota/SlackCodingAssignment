@@ -1,8 +1,7 @@
 //
 //  SlackEmployeesSearchResponseModel.swift
-//  ModernEmployeeDirectory
 //
-//  Created by lopa dharamshi on 2024-06-13.
+//  Created by Slack Candidate on 2024-06-13.
 //
 
 import Foundation
