@@ -6,7 +6,7 @@ protocol SlackAPIInterface {
     /*
      * Fetches users from search.team API that match the search term
      */
-    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([UserSearchResult]) -> Void)
+    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void)
 }
 
 class SlackApi: SlackAPIInterface {
@@ -26,7 +26,7 @@ class SlackApi: SlackAPIInterface {
      - parameter searchTerm: A string to match users against.
      - parameter completionHandler: The closure invoked when fetching is completed and the user search results are given.
      */
-    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([UserSearchResult]) -> Void) {
+    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void) {
         dataTask?.cancel()
 
         guard var urlComponents = URLComponents(string: baseURLString) else { return }
@@ -37,7 +37,7 @@ class SlackApi: SlackAPIInterface {
         guard let url = urlComponents.url else { return }
         dataTask = defaultSession.dataTask(with: url) { data, response, error in
             // These will be the results we return with our completion handler
-            var resultsToReturn = [UserSearchResult]()
+            var resultsToReturn = [SlackEmployee]()
 
             // Ensure that our data task is cleaned up and our completion handler is called
             defer {
@@ -62,7 +62,7 @@ class SlackApi: SlackAPIInterface {
 
             let decoder = JSONDecoder()
             do {
-                let result = try decoder.decode(SearchResponse.self, from: data)
+                let result = try decoder.decode(SlackEmployeesSearchResponse.self, from: data)
                 resultsToReturn = result.users
             } catch {
                 NSLog("[API] Decoding failed with error: \(error)")

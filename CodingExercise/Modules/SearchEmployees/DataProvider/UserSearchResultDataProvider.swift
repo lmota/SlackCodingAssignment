@@ -5,7 +5,7 @@ protocol UserSearchResultDataProviderInterface {
     /*
      * Fetches users from that match a given a search term
      */
-    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([UserSearchResult]) -> Void)
+    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void)
 }
 
 class UserSearchResultDataProvider: UserSearchResultDataProviderInterface {
@@ -15,7 +15,7 @@ class UserSearchResultDataProvider: UserSearchResultDataProviderInterface {
         self.slackAPI = slackAPI
     }
 
-    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([UserSearchResult]) -> Void) {
+    func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void) {
         self.slackAPI.fetchUsers(searchTerm) { users in
             completionHandler(users)
         }
