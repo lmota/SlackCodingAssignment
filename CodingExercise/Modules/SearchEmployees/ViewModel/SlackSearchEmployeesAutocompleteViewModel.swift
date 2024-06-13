@@ -12,44 +12,48 @@ protocol AutocompleteViewModelDelegate: AnyObject {
     func onSearchCompleted()
 }
 
+enum searchResultTableViewSections: Hashable {
+    case firstSection
+}
+
 // MARK: - Interfaces
 protocol AutocompleteViewModelInterface {
     /*
      * Fetches Slack employees from that match a given a search term
      */
     func fetchSlackEmployees(_ searchTerm: String?, completionHandler: @escaping ([SlackEmployee]) -> Void)
+    
+    /*
+     * Fetches Slack employees from that match a given a search term using combine
+     */
     func fetchSlackEmployees(_ searchTerm: String?)
-
+    
     /*
     * Returns a slack employee at the given position.
     */
     func slackEmployee(at index: Int) -> SlackEmployee?
 
     /*
-     * Returns the count of the current slackEmployees array.
-     */
-    func slackEmployeesCount() -> Int
-
-    /*
      Delegate that allows to send data updates through callback.
     */
     var delegate: AutocompleteViewModelDelegate? { get set }
+    
+    /*
+     Read only slack employees.
+    */
+    var slackEmployees: [SlackEmployee] { get }
 }
 
 class SlackSearchEmployeesAutocompleteViewModel: AutocompleteViewModelInterface {
     
     private let resultsDataProvider: UserSearchResultDataProviderInterface
-    private var slackEmployees: [SlackEmployee] = []
+    private(set) var slackEmployees: [SlackEmployee] = []
     private var cancellable = Set<AnyCancellable>()
 
     public weak var delegate: AutocompleteViewModelDelegate?
 
     init(dataProvider: UserSearchResultDataProviderInterface) {
         self.resultsDataProvider = dataProvider
-    }
-    
-    func slackEmployeesCount() -> Int {
-        return slackEmployees.count
     }
     
     func slackEmployee(at index: Int) -> SlackEmployee? {

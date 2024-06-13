@@ -6,10 +6,11 @@
 
 import UIKit
 
-
-class SlackSearchEmployeesAutocompleteViewController : UIViewController {
+class SlackSearchEmployeesAutocompleteViewController : UIViewController, UITableViewDelegate {
     private var viewModel: AutocompleteViewModelInterface
-
+    
+    var diffableDataSource: UITableViewDiffableDataSource<searchResultTableViewSections, SlackEmployee>?
+    
     init(viewModel: AutocompleteViewModelInterface) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -59,7 +60,6 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController {
         self.view.backgroundColor = Constants.backgroundColor
         searchBar.delegate = self
 
-        searchResultsTableView.dataSource = self
         searchResultsTableView.delegate = self
 
         viewModel.delegate = self
@@ -67,11 +67,26 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController {
     }
 
     private func setupSubviews() {
+        
+        setUpTableView()
         contentView.addSubview(searchBar)
         contentView.addSubview(searchResultsTableView)
         view.addSubview(contentView)
 
         setupConstraints()
+    }
+    
+    private func setUpTableView() {
+        diffableDataSource = UITableViewDiffableDataSource(tableView: searchResultsTableView, cellProvider: { [weak self] tableView, indexPath, itemIdentifier in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.slackEmployeeCellIdentifier , for: indexPath) as? SlackEmployeeTableViewCell, let viewModel = self?.viewModel else {
+                return UITableViewCell()
+            }
+                    
+            cell.configureCellAt(indexPath, viewModel: viewModel)
+            cell.selectionStyle = .none
+            
+            return cell
+        })
     }
 
     private func setupConstraints() {
@@ -92,6 +107,16 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController {
             searchResultsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.rightSpacing)
             ])
     }
+    
+    private func applySnapshot(slackEmployees: [SlackEmployee]) {
+        
+        var snapshot = NSDiffableDataSourceSnapshot<searchResultTableViewSections, SlackEmployee>()
+        snapshot.appendSections([searchResultTableViewSections.firstSection])
+     
+        snapshot.appendItems(slackEmployees, toSection: searchResultTableViewSections.firstSection)
+            
+        diffableDataSource?.apply(snapshot)
+    }
 }
 
 extension SlackSearchEmployeesAutocompleteViewController: UISearchBarDelegate {
@@ -100,9 +125,9 @@ extension SlackSearchEmployeesAutocompleteViewController: UISearchBarDelegate {
         viewModel.fetchSlackEmployees(searchText)
         
         // Reload the tableview and if the search text is cleared, dismiss the keyboard
-        searchResultsTableView.reloadData()
         if searchText.isEmpty {
             searchBar.resignFirstResponder()
+            applySnapshot(slackEmployees: [])
         }
     }
 }
@@ -114,30 +139,19 @@ extension SlackSearchEmployeesAutocompleteViewController: AutocompleteViewModelD
         let title = Constants.failedToSearchEmployeesTitle.localizedCapitalized
         let action = UIAlertAction(title: Constants.okButtonTitle.localizedUppercase, style: .default)
         self.displayAlert(with: title , message: reason, actions: [action])
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let self = self else {return}
+            self.applySnapshot(slackEmployees: self.viewModel.slackEmployees)
+        }
     }
     
     func onSearchCompleted() {
         DispatchQueue.main.async {[weak self] in
-            self?.searchResultsTableView.reloadData()
+            
+            guard let self = self else {return}
+            self.applySnapshot(slackEmployees: self.viewModel.slackEmployees)
         }
     }
 }
-
-extension SlackSearchEmployeesAutocompleteViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.slackEmployeeCellIdentifier , for: indexPath) as? SlackEmployeeTableViewCell else {
-            return UITableViewCell()
-        }
-                
-        cell.configureCellAt(indexPath, viewModel: viewModel)
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.slackEmployeesCount()
-    }
-}
-

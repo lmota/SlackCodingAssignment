@@ -80,7 +80,7 @@ class SlackApi: SlackAPIInterface {
     }
     
     func fetchSlackEmployees(_ searchTerm: String) -> AnyPublisher<SlackEmployeesSearchResponse, Error> {
-        guard var url = SlackSearchRequestURL.searchSlackEmployeesURL(for: searchTerm) else {
+        guard let url = SlackSearchRequestURL.searchSlackEmployeesURL(for: searchTerm) else {
             return Fail(error: SlackSearchResponseError.networking).eraseToAnyPublisher()
         }
         
