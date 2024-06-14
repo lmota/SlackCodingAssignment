@@ -8,3 +8,6 @@
 
 "Search Slack Employees" = "Search Slack Employees";
 "Search" = "Search";
+"Failed to search the employees data" = "Failed to search the employees data";
+"Internal error ocurred while searching employees" = "Internal error ocurred while searching employees";
+"Invalid search term. Please try again" = "Invalid search term. Please try again";

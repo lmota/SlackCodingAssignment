@@ -16,7 +16,7 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         employeeName.textAlignment = .left
         employeeName.numberOfLines = 1
         employeeName.lineBreakMode = .byTruncatingTail
-        employeeName.font = UIFont(name: "Lato-Bold", size: 16.0)
+        employeeName.font = UIFont(name: Constants.employeeDisplayNameFont, size: Constants.employeeNameFontSize)
         return employeeName
     }()
     
@@ -28,7 +28,7 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         employeeUserId.textAlignment = .left
         employeeUserId.numberOfLines = 1
         employeeUserId.lineBreakMode = .byTruncatingTail
-        employeeUserId.font = UIFont(name: "Lato-Regular", size: 16.0)
+        employeeUserId.font = UIFont(name: Constants.employeeUserNameFont, size: Constants.employeeNameFontSize)
         return employeeUserId
     }()
     
@@ -69,30 +69,21 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         employeeUserId.text = ""
     }
     
-    private func setUpUI() {
-        employeeStackView.addArrangedSubview(employeeAvatarImageView)
-        employeeStackView.addArrangedSubview(employeeName)
-        employeeStackView.addArrangedSubview(employeeUserId)
-        
-        self.contentView.addSubview(employeeStackView)
-        
-    }
-    
     override func updateConstraints() {
         
-        employeeAvatarImageView.widthAnchor.constraint(equalToConstant: 28.0).isActive = true
-        employeeAvatarImageView.heightAnchor.constraint(equalToConstant: 28.0).isActive = true
+        employeeAvatarImageView.widthAnchor.constraint(equalToConstant: Constants.avatarImageViewHeight).isActive = true
+        employeeAvatarImageView.heightAnchor.constraint(equalToConstant: Constants.avatarImageViewHeight).isActive = true
         
-        employeeAvatarImageView.heightAnchor.constraint(equalToConstant: 28.0).isActive = true
-        employeeUserId.heightAnchor.constraint(equalToConstant: 28.0).isActive = true
+        employeeAvatarImageView.heightAnchor.constraint(equalToConstant: Constants.avatarImageViewHeight).isActive = true
+        employeeUserId.heightAnchor.constraint(equalToConstant: Constants.avatarImageViewHeight).isActive = true
         
-        employeeStackView.setCustomSpacing(12.0, after: employeeAvatarImageView)
-        employeeStackView.setCustomSpacing(8.0, after: employeeAvatarImageView)
+        employeeStackView.setCustomSpacing(Constants.customSpacingAfterAvatar, after: employeeAvatarImageView)
+        employeeStackView.setCustomSpacing(Constants.customSpacingAfterName, after: employeeAvatarImageView)
         
-        employeeStackView.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor, constant:16.0).isActive = true
-        employeeStackView.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor, constant: 16.0).isActive = true
+        employeeStackView.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor, constant:Constants.employeeStackViewLeadingSpacing).isActive = true
+        employeeStackView.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor, constant: Constants.employeeStackViewLeadingSpacing).isActive = true
         employeeStackView.centerYAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.centerYAnchor).isActive = true
-        employeeStackView.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        employeeStackView.heightAnchor.constraint(equalToConstant: Constants.employeeStackViewHeight).isActive = true
         
         super.updateConstraints()
     }
@@ -119,6 +110,15 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func setUpUI() {
+        employeeStackView.addArrangedSubview(employeeAvatarImageView)
+        employeeStackView.addArrangedSubview(employeeName)
+        employeeStackView.addArrangedSubview(employeeUserId)
+        
+        self.contentView.addSubview(employeeStackView)
+        
     }
 
 }

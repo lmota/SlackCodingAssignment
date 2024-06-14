@@ -40,7 +40,7 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController, UITable
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = Constants.dividerColor
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16.0, bottom: 0, right: 16.0)
+        tableView.separatorInset = Constants.tableViewSeparatorEdgeInsets
         tableView.register(SlackEmployeeTableViewCell.self, forCellReuseIdentifier: Constants.slackEmployeeCellIdentifier)
 
         return tableView
@@ -109,12 +109,9 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController, UITable
     }
     
     private func applySnapshot(slackEmployees: [SlackEmployee]) {
-        
         var snapshot = NSDiffableDataSourceSnapshot<searchResultTableViewSections, SlackEmployee>()
         snapshot.appendSections([searchResultTableViewSections.firstSection])
-     
         snapshot.appendItems(slackEmployees, toSection: searchResultTableViewSections.firstSection)
-            
         diffableDataSource?.apply(snapshot)
     }
 }
@@ -141,16 +138,19 @@ extension SlackSearchEmployeesAutocompleteViewController: AutocompleteViewModelD
         self.displayAlert(with: title , message: reason, actions: [action])
         
         DispatchQueue.main.async { [weak self] in
-            
-            guard let self = self else {return}
+            guard let self = self else {
+                return
+            }
             self.applySnapshot(slackEmployees: self.viewModel.slackEmployees)
         }
     }
     
     func onSearchCompleted() {
-        DispatchQueue.main.async {[weak self] in
+        DispatchQueue.main.async { [weak self] in
             
-            guard let self = self else {return}
+            guard let self = self else {
+                return
+            }
             self.applySnapshot(slackEmployees: self.viewModel.slackEmployees)
         }
     }

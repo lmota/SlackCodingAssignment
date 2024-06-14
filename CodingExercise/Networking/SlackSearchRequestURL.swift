@@ -20,13 +20,12 @@ struct SlackSearchRequestURL {
             return nil
         }
 
-        let queryItemQuery = URLQueryItem(name: "query", value: searchTerm)
+        let queryItemQuery = URLQueryItem(name: Constants.searchTermQueryName, value: searchTerm)
         urlComponents.queryItems = [queryItemQuery]
 
         guard let url = urlComponents.url else {
             return nil
         }
-        
         return url
     }
 }

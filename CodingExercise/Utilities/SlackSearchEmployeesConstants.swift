@@ -30,4 +30,14 @@ struct Constants {
     static let leftSpacing: CGFloat = 20.0
     static let bottomSpacing: CGFloat = 20.0
     static let rightSpacing: CGFloat = -20.0
+    static let avatarImageViewHeight: CGFloat = 28.0
+    static let employeeStackViewHeight: CGFloat = 44.0
+    static let employeeStackViewLeadingSpacing: CGFloat = 16.0
+    static let customSpacingAfterAvatar: CGFloat = 12.0
+    static let customSpacingAfterName: CGFloat = 8.0
+    static let employeeNameFontSize: CGFloat = 16.0
+    static let employeeDisplayNameFont: String = "Lato-Bold"
+    static let employeeUserNameFont: String = "Lato-Regular"
+    static let tableViewSeparatorEdgeInsets =  UIEdgeInsets(top: 0, left: 16.0, bottom: 0, right: 16.0)
+    static let searchTermQueryName = "query"
 }
