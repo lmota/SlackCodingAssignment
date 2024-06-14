@@ -8,6 +8,10 @@ import Foundation
 
 extension FileManager {
     
+    /*
+     * Make writable copy of the destination file name and copy contents from original file to destination file for the first time.
+     * Following times, returns the file url for the destination file
+     */
     func makeWritableCopy(named destFileName: String, ofResourceFile originalFileName: String) throws -> URL {
         // Get Documents directory in app bundle
         guard let documentsDirectory = self.urls(for: .documentDirectory, in: .userDomainMask).last else {
@@ -19,6 +23,7 @@ extension FileManager {
 
         // If destination file doesn’t exist yet
         if (try? writableFileURL.checkResourceIsReachable()) == nil {
+
             // Get original (unwritable) file’s URL
             guard let originalFileURL = Bundle.main.url(forResource: originalFileName, withExtension: nil) else {
                 fatalError("Cannot find original file “\(originalFileName)” in application bundle’s resources.")
@@ -40,8 +45,11 @@ extension FileManager {
         return writableFileURL
     }
     
+    /*
+     * Fetch the file url for path from documents directory
+     */
     func fileURL(for path: String, extension: String) -> URL {
-        let directoryURL = self.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let directoryURL = self.urls(for: .documentDirectory, in: .userDomainMask).first
         return URL(fileURLWithPath: path, relativeTo: directoryURL).appendingPathExtension(Constants.denyListFileExtension)
     }
     

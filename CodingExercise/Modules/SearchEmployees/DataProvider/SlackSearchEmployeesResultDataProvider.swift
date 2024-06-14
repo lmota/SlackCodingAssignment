@@ -26,6 +26,7 @@ protocol UserSearchResultDataProviderInterface {
     
 }
 
+// MARK: SlackSearchEmployeesResultDataProvider implments UserSearchResultDataProviderInterface
 class SlackSearchEmployeesResultDataProvider: UserSearchResultDataProviderInterface {
     
     var slackAPI: SlackAPIInterface

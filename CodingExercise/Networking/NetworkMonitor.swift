@@ -7,23 +7,20 @@
 import Foundation
 import Network
 
+/*
+ * Class to detect device's network status via isConnected published property
+ */
 final class NetworkMonitor: ObservableObject {
 
     static let shared = NetworkMonitor()
-    let queue = DispatchQueue(label: "NetworkMonitor")
+    let queue = DispatchQueue(label: Constants.networkMonitorQueue)
     let monitor = NWPathMonitor()
     @Published public private(set) var isConnected: Bool = false
-    private var hasStatus: Bool = false
     
     init() {
         monitor.pathUpdateHandler = { path in
             #if targetEnvironment(simulator)
-                if (!self.hasStatus) {
-                    self.isConnected = path.status == .satisfied
-                    self.hasStatus = true
-                } else {
-                    self.isConnected = !self.isConnected
-                }
+                self.isConnected = true
             #else
                 self.isConnected = path.status == .satisfied
             #endif

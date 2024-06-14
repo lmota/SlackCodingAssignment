@@ -8,12 +8,20 @@ import Foundation
 import UIKit
 
 /**
- *  coordinator protocol
+ * A generic coordinator protocol.
+ * A coordinator is a construct that has the following responsibilities:
+ * - Instantiate the next scene's viewController
+ * - Inject dependencies into the viewController
+ * - Add the viewController to the window either by adding it on the UINavigationController or a UITabBarController
  */
 public protocol CoordinatorProtocol {
     var navigationController: UINavigationController {get set}
     
-    // Starts the navigation
+    /**
+     * starts the navigation flow:
+     * Injects all the dependency in the viewController
+     * Adds the viewController on the window (usually through UINavigationController or UITabBarController)
+     */
     func start()
 }
 
@@ -28,6 +36,7 @@ class SlackSearchEmployeesAppCoordinator: CoordinatorProtocol {
     }
     
     func start() {
+        // Invoke start on SlackSearchEmployeesCoordinator i.e. module coordinator
         SlackSearchEmployeesCoordinator(navigationController: navigationController).start()
     }
 

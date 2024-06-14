@@ -7,6 +7,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Module coordinator, navigating to the SlackSearchEmployeesAutocompleteViewController
+ */
 class SlackSearchEmployeesCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController
     

@@ -5,6 +5,9 @@
 //
 
 import UIKit
+/**
+ * SlackEmployeeTableViewCell - custom autoCompleteTableViewCell
+ */
 
 class SlackEmployeeTableViewCell: UITableViewCell {
 
@@ -48,11 +51,6 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         return employeeStackView
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: Constants.slackEmployeeCellIdentifier)
         self.backgroundColor = Constants.cellBackgroundColor
@@ -92,24 +90,19 @@ class SlackEmployeeTableViewCell: UITableViewCell {
     func configureCellAt(_ indexPath: IndexPath, viewModel: AutocompleteViewModelInterface) {
         
         guard let slackEmployee = viewModel.slackEmployee(at: indexPath.row) else {
-            // TODO: log error
+            Logger.logInfo("Unable to fetch the slack employee at the given index")
             return
         }
         
         employeeName.text = slackEmployee.displayName
         employeeUserId.text = slackEmployee.username
         
+        // Fetch the avatar image from cache, if not available in cache, fetch from network
         cacheImage(urlString: slackEmployee.avatarURL)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     private func setUpUI() {
@@ -118,7 +111,6 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         employeeStackView.addArrangedSubview(employeeUserId)
         
         self.contentView.addSubview(employeeStackView)
-        
     }
 
 }
@@ -126,7 +118,9 @@ class SlackEmployeeTableViewCell: UITableViewCell {
 let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension SlackEmployeeTableViewCell {
-    
+    /**
+     *  Fetch the avatar image from cache, if not available in cache, fetch from network
+     */
     func cacheImage(urlString: String) {
         
         guard let url = URL(string: urlString) else {

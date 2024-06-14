@@ -7,6 +7,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Struct for constants used in the application
+ */
 struct Constants {
     static let textFieldPlaceholder = "Search employees by name".localizedCapitalized
     static let searchEmployeesViewControllerTitle = "Search Slack Employees".localizedCapitalized
@@ -41,4 +44,5 @@ struct Constants {
     static let employeeUserNameFont: String = "Lato-Regular"
     static let tableViewSeparatorEdgeInsets =  UIEdgeInsets(top: 0, left: 16.0, bottom: 0, right: 16.0)
     static let searchTermQueryName = "query"
+    static let networkMonitorQueue = "NetworkMonitor"
 }

@@ -8,9 +8,9 @@ import Foundation
 
 
 /**
- * structure for SlackSearchRequestURL
+ * class for SlackSearchRequestURL
  */
-struct SlackSearchRequestURL {
+class SlackSearchRequestURL {
     /**
      * static function to get the URL for Slack search api
      */
@@ -29,9 +29,12 @@ struct SlackSearchRequestURL {
         return url
     }
     
+    /**
+     * static function to get the URL for fetching all Slack employees
+     */
     static func fetchAllSlackEmployeesURL() -> URL? {
         
-        guard var url = URL(string: Constants.slackSearchEndpoint) else {
+        guard let url = URL(string: Constants.slackSearchEndpoint) else {
             return nil
         }
 

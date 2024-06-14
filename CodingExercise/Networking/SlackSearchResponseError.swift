@@ -6,6 +6,9 @@
 
 import Foundation
 
+/**
+ *  Enumeration for the response failure.
+ */
 enum SlackSearchResponseError : Error {
 
     case networking

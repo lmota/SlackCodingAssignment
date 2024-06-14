@@ -14,8 +14,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "fetchSlackEmployees(_:completionHandler:)"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "fetchSlackEmployees(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/DataProvider/SlackSearchEmployeesResultDataProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "fetchUsers(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "fetchSlackEmployees(_:)"
             landmarkType = "7">
             <Locations>
@@ -142,8 +142,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "fetchSlackEmployees(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "fetchSlackEmployees(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "handleSearchEmployeeResponseSuccess(with:searchTerm:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "addFailedSearchTermToDenyList(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "checkIfInTheDenyList(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "addLastSuccessfulSearchResultToDocuments(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
             landmarkName = "retrieveLastSuccessfulSearchResultFromDocuments()"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "handleSearchEmployeeResponseSuccess(with:searchTerm:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
             landmarkName = "addLastSuccessfulSearchResultToDocuments(_:)"
             landmarkType = "7">
             <Locations>
@@ -318,8 +318,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "fetchAllSlackEmployees()"
             landmarkType = "7">
          </BreakpointContent>
