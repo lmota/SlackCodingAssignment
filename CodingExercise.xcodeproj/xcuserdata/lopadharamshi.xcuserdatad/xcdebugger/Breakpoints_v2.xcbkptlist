@@ -30,8 +30,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "handleSearchEmployeeResponseSuccess(with:searchTerm:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "addFailedSearchTermToDenyList(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "addLastSuccessfulSearchResultToDocuments(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "retrieveLastSuccessfulSearchResultFromDocuments()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "handleSearchEmployeeResponseSuccess(with:searchTerm:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,13 +110,13 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "addLastSuccessfulSearchResultToDocuments(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F4384B4F-A985-4B29-9F5F-7623AC8877EC - ad555e5324ac06d7"
+                  uuid = "F4384B4F-A985-4B29-9F5F-7623AC8877EC - ad555e5324ac0629"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -126,12 +126,12 @@
                   urlString = "file:///Users/lopadharamshi/Slack_CodingAssignment/SlackCodingAssignment/CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "303"
-                  endingLineNumber = "303"
+                  startingLineNumber = "305"
+                  endingLineNumber = "305"
                   offsetFromSymbolStart = "816">
                </Location>
                <Location
-                  uuid = "F4384B4F-A985-4B29-9F5F-7623AC8877EC - ad555e5324ac06d7"
+                  uuid = "F4384B4F-A985-4B29-9F5F-7623AC8877EC - ad555e5324ac0629"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -141,8 +141,8 @@
                   urlString = "file:///Users/lopadharamshi/Slack_CodingAssignment/SlackCodingAssignment/CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "303"
-                  endingLineNumber = "303"
+                  startingLineNumber = "305"
+                  endingLineNumber = "305"
                   offsetFromSymbolStart = "896">
                </Location>
             </Locations>
@@ -444,8 +444,8 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "observeConnection(networkMonitor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -460,9 +460,25 @@
             filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "retrieveLastSuccessfulSearchResultFromDocuments()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F6C6AE1-69B4-4E32-829D-B7783A07686A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingExercise/Networking/NetworkMonitor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

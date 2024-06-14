@@ -64,7 +64,7 @@ class SlackSearchEmployeesAutocompleteViewModel: AutocompleteViewModelInterface 
     fileprivate let networkMonitor = NWPathMonitor()
     private var connectionobserver: AnyCancellable?
     private var isConnected: Bool = true
-    private var viewModelMode: ViewModelModes = .online
+    var viewModelMode: ViewModelModes = .online
 
     // public properties
     public weak var delegate: AutocompleteViewModelDelegate?
@@ -193,6 +193,8 @@ class SlackSearchEmployeesAutocompleteViewModel: AutocompleteViewModelInterface 
                             DispatchQueue.main.async {
                                 self.delegate?.onSearchCompleted()
                             }
+                        } else {
+                            self.slackEmployees = []
                         }
                     }
                 } else {
@@ -319,6 +321,11 @@ extension SlackSearchEmployeesAutocompleteViewModel {
     
     // fetching last successfull search result from Documents directory
     private func retrieveLastSuccessfulSearchResultFromDocuments() -> [SlackEmployee]? {
+        
+        guard viewModelMode == .offline else {
+            return nil
+        }
+        
         var slackEmployees = [SlackEmployee]()
         do {
             
