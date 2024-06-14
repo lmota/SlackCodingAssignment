@@ -15,6 +15,7 @@ struct Constants {
     static let readWriteDenyListFilename = "denylistReadWrite.txt"
     static let readOnlydenyListFilename = "denylist.txt"
     static let denyListFileExtension = "txt"
+    static let lastSuccessfullSearchResultFilenameWithoutExtension = "lastSearchedSlackEmployees"
     static let readWriteDenyListFileWithoutExtension = "denylistReadWrite"
     static let backgroundColor = UIColor(red:0.925, green: 1.0, blue: 1.0, alpha: 1)
     static let cellBackgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)

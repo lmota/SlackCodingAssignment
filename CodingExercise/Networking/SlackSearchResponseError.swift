@@ -15,9 +15,9 @@ enum SlackSearchResponseError : Error {
     var reason: String {
         switch self {
         case .networking:
-            return "Failed to search the employees data".localizedCapitalized
+            return "Failed to search the employees data. Please try again".localizedCapitalized
         case .decoding:
-            return "Internal error ocurred while searching employees".localizedCapitalized
+            return "Internal error ocurred while searching employees. Please try again".localizedCapitalized
         case .searchTermInDenyList:
             return "Invalid search term. Please try again".localizedCapitalized
             

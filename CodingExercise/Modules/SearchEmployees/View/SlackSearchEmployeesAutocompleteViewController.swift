@@ -64,6 +64,7 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController, UITable
 
         viewModel.delegate = self
         setupSubviews()
+        viewModel.fetchAllSlackEmployees()
     }
 
     private func setupSubviews() {

@@ -14,10 +14,20 @@ protocol UserSearchResultDataProviderInterface {
      */
     func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void)
     
+    /*
+     * Fetches users from that match a given a search term using combine
+     */
     func fetchSlackEmployees(_ searchTerm: String) -> AnyPublisher<SlackEmployeesSearchResponse, Error>
+    
+    /*
+     * Fetches all slack users
+     */
+    func fetchAllSlackEmployees() -> AnyPublisher<SlackEmployeesSearchResponse, Error>
+    
 }
 
 class SlackSearchEmployeesResultDataProvider: UserSearchResultDataProviderInterface {
+    
     var slackAPI: SlackAPIInterface
 
     init(slackAPI: SlackAPIInterface) {
@@ -32,5 +42,9 @@ class SlackSearchEmployeesResultDataProvider: UserSearchResultDataProviderInterf
     
     func fetchSlackEmployees(_ searchTerm: String) -> AnyPublisher<SlackEmployeesSearchResponse, Error> {
         self.slackAPI.fetchSlackEmployees(searchTerm).eraseToAnyPublisher()
+    }
+    
+    func fetchAllSlackEmployees() -> AnyPublisher<SlackEmployeesSearchResponse, Error> {
+        self.slackAPI.fetchAllSlackEmployees().eraseToAnyPublisher()
     }
 }

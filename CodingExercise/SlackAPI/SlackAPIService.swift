@@ -15,10 +15,20 @@ protocol SlackAPIInterface {
      */
     func fetchUsers(_ searchTerm: String, completionHandler: @escaping ([SlackEmployee]) -> Void)
     
+    /*
+     * Fetches users from search.team API that match the search term using combine
+     */
     func fetchSlackEmployees(_ searchTerm: String) -> AnyPublisher<SlackEmployeesSearchResponse, Error>
+    
+    /*
+     * Fetches all slack apis
+     */
+    func fetchAllSlackEmployees() -> AnyPublisher<SlackEmployeesSearchResponse, Error>
 }
 
 class SlackApi: SlackAPIInterface {
+
+    
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
 
@@ -97,6 +107,26 @@ class SlackApi: SlackAPIInterface {
                 Fail(error: SlackSearchResponseError.decoding)
             }.eraseToAnyPublisher()
         
+        
+    }
+    
+    func fetchAllSlackEmployees() -> AnyPublisher<SlackEmployeesSearchResponse, Error> {
+        guard let url = SlackSearchRequestURL.fetchAllSlackEmployeesURL() else {
+            return Fail(error: SlackSearchResponseError.networking).eraseToAnyPublisher()
+        }
+        
+        return defaultSession.dataTaskPublisher(for: url)
+            .tryMap { (data: Data, response: URLResponse) in
+                guard let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 else {
+                    throw SlackSearchResponseError.networking
+                }
+                return data
+            }
+            .decode(type: SlackEmployeesSearchResponse.self, decoder: JSONDecoder())
+            .tryCatch { _ in
+                Fail(error: SlackSearchResponseError.decoding)
+            }.eraseToAnyPublisher()
         
     }
 }

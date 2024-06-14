@@ -28,4 +28,13 @@ struct SlackSearchRequestURL {
         }
         return url
     }
+    
+    static func fetchAllSlackEmployeesURL() -> URL? {
+        
+        guard var url = URL(string: Constants.slackSearchEndpoint) else {
+            return nil
+        }
+
+        return url
+    }
 }

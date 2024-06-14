@@ -42,7 +42,7 @@ extension FileManager {
     
     func fileURL(for path: String, extension: String) -> URL {
         let directoryURL = self.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        return URL(fileURLWithPath: Constants.readWriteDenyListFileWithoutExtension, relativeTo: directoryURL).appendingPathExtension(Constants.denyListFileExtension)
+        return URL(fileURLWithPath: path, relativeTo: directoryURL).appendingPathExtension(Constants.denyListFileExtension)
     }
     
 }

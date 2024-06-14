@@ -30,6 +30,7 @@
 		8A1019CB2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */; };
 		8A1019CD2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */; };
 		8A1019CF2C1BFBDE00A0A9F3 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CE2C1BFBDE00A0A9F3 /* FileManagerExtension.swift */; };
+		8AB8B5642C1C9AF80050CD1B /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8B5632C1C9AF80050CD1B /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerExtension.swift; sourceTree = "<group>"; };
 		8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8A1019CE2C1BFBDE00A0A9F3 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
+		8AB8B5632C1C9AF80050CD1B /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			children = (
 				8A1019C42C1B930500A0A9F3 /* SlackSearchResponseError.swift */,
 				8A1019C62C1B935A00A0A9F3 /* SlackSearchRequestURL.swift */,
+				8AB8B5632C1C9AF80050CD1B /* NetworkMonitor.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				8A1019CD2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift in Sources */,
 				6A29FD2920E6EC2F004885EC /* SlackAPIService.swift in Sources */,
 				8A1019B82C1B5F3300A0A9F3 /* SlackSearchEmployeesCoordinator.swift in Sources */,
+				8AB8B5642C1C9AF80050CD1B /* NetworkMonitor.swift in Sources */,
 				6A29FD2720E6EC1F004885EC /* SlackEmployeesSearchResponseModel.swift in Sources */,
 				8A1019C72C1B935A00A0A9F3 /* SlackSearchRequestURL.swift in Sources */,
 				8A1019C92C1B982000A0A9F3 /* Logger.swift in Sources */,
@@ -549,13 +553,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UF7FN999R;
+				DEVELOPMENT_TEAM = 54Y2UGB3CF;
 				INFOPLIST_FILE = CodingExercise/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = slack.CodingExercise;
+				PRODUCT_BUNDLE_IDENTIFIER = lopa.appleios.slack.CodingExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -565,13 +571,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UF7FN999R;
+				DEVELOPMENT_TEAM = 54Y2UGB3CF;
 				INFOPLIST_FILE = CodingExercise/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = slack.CodingExercise;
+				PRODUCT_BUNDLE_IDENTIFIER = lopa.appleios.slack.CodingExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
