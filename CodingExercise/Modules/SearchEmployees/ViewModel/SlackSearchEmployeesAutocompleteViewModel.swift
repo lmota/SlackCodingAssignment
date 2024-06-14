@@ -94,7 +94,9 @@ class SlackSearchEmployeesAutocompleteViewModel: AutocompleteViewModelInterface 
             return
         }
 
-        self.resultsDataProvider.fetchUsers(term) { users in
+        self.resultsDataProvider.fetchUsers(term) { [weak self] users in
+            guard let self = self else { return }
+            self.slackEmployees.replaceSubrange(0..<self.slackEmployees.count, with: users)
             completionHandler(users)
         }
     }

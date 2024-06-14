@@ -1,0 +1,53 @@
+{
+  "ok": true,
+  "users": [
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/women/89.jpg",
+      "display_name": "Saniyah Whitehead",
+      "id": 2,
+      "username": "swhitehead"
+    },
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/women/69.jpg",
+      "display_name": "Sidney David",
+      "id": 9,
+      "username": "sdavid"
+    },
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/men/10.jpg",
+      "display_name": "Simeon Clarke",
+      "id": 39,
+      "username": "sclarke"
+    },
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/women/87.jpg",
+      "display_name": "Serena Terry",
+      "id": 62,
+      "username": "sterry"
+    },
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/men/66.jpg",
+      "display_name": "Santino Reid",
+      "id": 63,
+      "username": "areid"
+    },
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/men/45.jpg",
+      "display_name": "Savion Wilkinson",
+      "id": 69,
+      "username": "swilkinson"
+    },
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/women/14.jpg",
+      "display_name": "Sariah Gonzales",
+      "id": 78,
+      "username": "sgonzales"
+    },
+    {
+      "avatar_url": "https://randomuser.me/api/portraits/women/45.jpg",
+      "display_name": "Sasha Brock",
+      "id": 99,
+      "username": "sbrock"
+    }
+  ]
+}

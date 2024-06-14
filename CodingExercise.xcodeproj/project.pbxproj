@@ -31,6 +31,9 @@
 		8A1019CD2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */; };
 		8A1019CF2C1BFBDE00A0A9F3 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CE2C1BFBDE00A0A9F3 /* FileManagerExtension.swift */; };
 		8AB8B5642C1C9AF80050CD1B /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8B5632C1C9AF80050CD1B /* NetworkMonitor.swift */; };
+		8AB8B5672C1CB66D0050CD1B /* SlackSearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AB8B5662C1CB66D0050CD1B /* SlackSearchResponse.json */; };
+		8AB8B5692C1CB6CC0050CD1B /* SlackSearchNoResultsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AB8B5682C1CB6CC0050CD1B /* SlackSearchNoResultsResponse.json */; };
+		8AB8B56B2C1CCEF50050CD1B /* SlackSearchErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AB8B56A2C1CCEF50050CD1B /* SlackSearchErrorResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8A1019CE2C1BFBDE00A0A9F3 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		8AB8B5632C1C9AF80050CD1B /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		8AB8B5662C1CB66D0050CD1B /* SlackSearchResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SlackSearchResponse.json; sourceTree = "<group>"; };
+		8AB8B5682C1CB6CC0050CD1B /* SlackSearchNoResultsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SlackSearchNoResultsResponse.json; sourceTree = "<group>"; };
+		8AB8B56A2C1CCEF50050CD1B /* SlackSearchErrorResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SlackSearchErrorResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		6A29FD0320E6EB0F004885EC /* CodingExercise */ = {
 			isa = PBXGroup;
 			children = (
+				8AB8B5652C1CB6120050CD1B /* Fixtures */,
 				8A1019C32C1B92ED00A0A9F3 /* Networking */,
 				8A1019B92C1B652600A0A9F3 /* Localization */,
 				8A1019B12C1B584200A0A9F3 /* Extensions */,
@@ -278,6 +285,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		8AB8B5652C1CB6120050CD1B /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				8AB8B5662C1CB66D0050CD1B /* SlackSearchResponse.json */,
+				8AB8B5682C1CB6CC0050CD1B /* SlackSearchNoResultsResponse.json */,
+				8AB8B56A2C1CCEF50050CD1B /* SlackSearchErrorResponse.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +382,7 @@
 			files = (
 				8A1019BC2C1B65B500A0A9F3 /* LocalizableStrings.strings in Resources */,
 				6AC4866E21F2AB700068D741 /* LaunchScreen.storyboard in Resources */,
+				8AB8B56B2C1CCEF50050CD1B /* SlackSearchErrorResponse.json in Resources */,
 				6AE88E36222759D90032677C /* Lato-Regular.ttf in Resources */,
 				6A29FD0C20E6EB0F004885EC /* Assets.xcassets in Resources */,
 				6AE88E35222759D90032677C /* Lato-Bold.ttf in Resources */,
@@ -376,6 +394,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB8B5672C1CB66D0050CD1B /* SlackSearchResponse.json in Resources */,
+				8AB8B5692C1CB6CC0050CD1B /* SlackSearchNoResultsResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

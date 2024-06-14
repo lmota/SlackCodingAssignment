@@ -13,6 +13,13 @@ struct SlackEmployeesSearchResponse: Codable {
     let ok: Bool
     let error: String?
     let users: [SlackEmployee]
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.ok = try container.decode(Bool.self, forKey: .ok)
+        self.error = try container.decodeIfPresent(String.self, forKey: .error)
+        self.users = try container.decode([SlackEmployee].self, forKey: .users)
+    }
 }
 
 /**
