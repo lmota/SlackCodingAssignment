@@ -29,6 +29,7 @@
 		8A1019C92C1B982000A0A9F3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019C82C1B982000A0A9F3 /* Logger.swift */; };
 		8A1019CB2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */; };
 		8A1019CD2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */; };
+		8A1019CF2C1BFBDE00A0A9F3 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1019CE2C1BFBDE00A0A9F3 /* FileManagerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		8A1019C82C1B982000A0A9F3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerExtension.swift; sourceTree = "<group>"; };
 		8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		8A1019CE2C1BFBDE00A0A9F3 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				8A1019CA2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift */,
 				8A1019CC2C1B9FDE00A0A9F3 /* UIImageViewExtension.swift */,
+				8A1019CE2C1BFBDE00A0A9F3 /* FileManagerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				8A1019C92C1B982000A0A9F3 /* Logger.swift in Sources */,
 				8A1019CB2C1B9C2A00A0A9F3 /* AlertControllerExtension.swift in Sources */,
 				6A29FD0520E6EB0F004885EC /* AppDelegate.swift in Sources */,
+				8A1019CF2C1BFBDE00A0A9F3 /* FileManagerExtension.swift in Sources */,
 				6AF5D92820EC255B008186C3 /* SlackSearchEmployeesAutocompleteViewModel.swift in Sources */,
 				8A1019B62C1B5E2300A0A9F3 /* SlackSearchEmployeesAppCoordinator.swift in Sources */,
 			);
