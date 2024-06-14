@@ -12,7 +12,10 @@ struct Constants {
     static let searchEmployeesViewControllerTitle = "Search Slack Employees".localizedCapitalized
     static let slackEmployeeCellIdentifier = "SlackEmployeeCustomCell"
     static let slackSearchEndpoint =  "https://mobile-code-exercise-a7fb88c7afa6.herokuapp.com/search"
-
+    static let readWriteDenyListFilename = "denylistReadWrite.txt"
+    static let readOnlydenyListFilename = "denylist.txt"
+    static let denyListFileExtension = "txt"
+    static let readWriteDenyListFileWithoutExtension = "denylistReadWrite"
     static let backgroundColor = UIColor(red:0.925, green: 1.0, blue: 1.0, alpha: 1)
     static let cellBackgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
     static let displayNameColor = UIColor(red: 0.113, green: 0.1098, blue: 0.113, alpha: 1)
