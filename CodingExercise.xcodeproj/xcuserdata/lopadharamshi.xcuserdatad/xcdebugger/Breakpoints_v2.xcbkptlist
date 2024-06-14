@@ -320,6 +320,21 @@
                   endingLineNumber = "165"
                   offsetFromSymbolStart = "504">
                </Location>
+               <Location
+                  uuid = "E60C0637-E9A6-473C-AF4B-5FAFAC00FDF8 - a5b6cabc6c0d3972"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CodingExerciseTests.MockSlackAPIServiceProvider.fetchAllSlackEmployees() -&gt; Combine.AnyPublisher&lt;CodingExercise.SlackEmployeesSearchResponse, Swift.Error&gt;"
+                  moduleName = "CodingExerciseTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lopadharamshi/Slack_CodingAssignment/SlackCodingAssignment/CodingExerciseTests/SlackSearchEmployeesAutocompleteViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "504">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -381,6 +396,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "94FA3A3F-4878-4678-8BF5-C884DC104652 - 3c5fd7fcceaa6112"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URL) -&gt; Foundation.Data in CodingExerciseTests.MockSlackAPIServiceProvider.fetchAllSlackEmployees() -&gt; Combine.AnyPublisher&lt;CodingExercise.SlackEmployeesSearchResponse, Swift.Error&gt;"
+                  moduleName = "CodingExerciseTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lopadharamshi/Slack_CodingAssignment/SlackCodingAssignment/CodingExerciseTests/SlackSearchEmployeesAutocompleteViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
                   offsetFromSymbolStart = "68">
                </Location>
             </Locations>
@@ -479,6 +509,38 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9EC2629-E081-438D-9CAC-54997B8BC28B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingExerciseTests/SlackSearchEmployeesAutocompleteViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "testSlackEmployeesSearchResultUsingCombine()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F8346E2-9788-41C9-9C8C-BB94FD7890BB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingExercise/Modules/SearchEmployees/ViewModel/SlackSearchEmployeesAutocompleteViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "fetchSlackEmployees(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

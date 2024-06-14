@@ -617,6 +617,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UF7FN999R;
 				INFOPLIST_FILE = CodingExerciseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = slack.CodingExerciseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -634,6 +635,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UF7FN999R;
 				INFOPLIST_FILE = CodingExerciseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = slack.CodingExerciseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
