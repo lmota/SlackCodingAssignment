@@ -11,7 +11,7 @@ https://github.com/lmota/SlackCodingAssignment
    Built an iOS app in Swift using UIKit to search Slack employees. The app supports online as well as offline mode.
    
   ## Build tools & versions used
-  Xcode 14.1, deployment target - iOS 16.1
+  Xcode 15.4, deployment target - iOS 16.1
      
   ## Steps to run the app
   1. Launch the app using xcode with target as any iOS simulator or an iOS device.
