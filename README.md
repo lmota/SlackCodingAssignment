@@ -1,6 +1,11 @@
 # SlackCodingAssignment
 Create an app to search for slack employees
 
+# Git repository
+==========================================
+https://github.com/lmota/SlackCodingAssignment
+
+
 # Search Slack Employees App
 ==========================================
    Built an iOS app in Swift using UIKit to search Slack employees. The app supports online as well as offline mode.
