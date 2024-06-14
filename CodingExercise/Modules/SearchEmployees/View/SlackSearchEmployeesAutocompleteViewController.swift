@@ -10,7 +10,7 @@ import UIKit
 /**
  * SlackSearchEmployeesAutocompleteViewController, responsible for presenting autocomplete search bar and table view of Slack employees
  */
-class SlackSearchEmployeesAutocompleteViewController : UIViewController, UITableViewDelegate {
+class SlackSearchEmployeesAutocompleteViewController : UIViewController {
 
     // private properties
     private var viewModel: AutocompleteViewModelInterface
@@ -114,7 +114,6 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController, UITable
             contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            contentView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             contentView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             searchBar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.topSpacing),
@@ -177,5 +176,13 @@ extension SlackSearchEmployeesAutocompleteViewController: AutocompleteViewModelD
     func onSearchCompleted() {
         // apply the snapshot to update the table with results
         self.applySnapshot()
+    }
+}
+
+// MARK: UITableViewDelegate
+extension SlackSearchEmployeesAutocompleteViewController : UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.cellRowHeight
     }
 }
