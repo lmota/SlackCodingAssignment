@@ -78,6 +78,7 @@ class SlackSearchEmployeesAutocompleteViewModel: AutocompleteViewModelInterface 
 
     init(dataProvider: UserSearchResultDataProviderInterface) {
         self.resultsDataProvider = dataProvider
+        self.observeConnection(networkMonitor: NetworkMonitor())
     }
     
     func slackEmployee(at index: Int) -> SlackEmployee? {

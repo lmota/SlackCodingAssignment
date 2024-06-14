@@ -2,7 +2,7 @@ import XCTest
 import Combine
 @testable import CodingExercise
 
-class CodingExerciseTests: XCTestCase {
+class SlackSearchEmployeesAutocompleteViewModelTests: XCTestCase {
     
     private var slackSearchResponseFileName = "SlackSearchResponse"
     private lazy var viewModel: SlackSearchEmployeesAutocompleteViewModel = {
@@ -14,8 +14,7 @@ class CodingExerciseTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
         viewModel.fetchSlackEmployees("S") { slackEmployees in
             Logger.logInfo("Slack employees from mock view model - \(slackEmployees)")
         }
@@ -81,10 +80,21 @@ class CodingExerciseTests: XCTestCase {
         XCTAssertEqual(slackEmployee.username, "sbrock")
         XCTAssertEqual(slackEmployee.userId, 99)
         XCTAssertEqual(slackEmployee.avatarURL, "https://randomuser.me/api/portraits/women/45.jpg")
+    }
+    
+    func testFetchAllSlackEmployees() {
+        let mockSlackApiService = MockSlackAPIServiceProvider(mockResponseFilename: "AllSlackEmployeesResponse")
+        let mockSlackApiDataProvider = MockDataProvider(slackAPI: mockSlackApiService)
+        viewModel = SlackSearchEmployeesAutocompleteViewModel(dataProvider: mockSlackApiDataProvider)
+        
+        viewModel.fetchAllSlackEmployees()
+        XCTAssertEqual(viewModel.slackEmployees.count, 0)
         
     }
     
-    
+    func testViewModelNetworkMode_Offline() {
+        XCTAssertEqual(viewModel.viewModelMode, .online)
+    }
 }
 
 class MockDataProvider : UserSearchResultDataProviderInterface {
@@ -149,8 +159,20 @@ class MockSlackAPIServiceProvider: SlackAPIInterface {
     }
     
     func fetchAllSlackEmployees() -> AnyPublisher<CodingExercise.SlackEmployeesSearchResponse, Error> {
-        let error: Error = SlackSearchResponseError.searchTermInDenyList
-        return Fail(error: error).eraseToAnyPublisher()
+        let testBundle = Bundle(for: type(of: BundleTestClass()))
+        
+        return testBundle.url(forResource: mockResponseFilename, withExtension: "json")
+            .publisher
+            .tryMap{ string in
+                guard let data = try? Data(contentsOf: string) else {
+                    fatalError("Failed to load from bundle.")
+                }
+                return data
+            }
+            .decode(type: SlackEmployeesSearchResponse.self, decoder: JSONDecoder())
+            .catch { error in
+                Fail(error: error)
+            }.eraseToAnyPublisher()
     }
     
     
