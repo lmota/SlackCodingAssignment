@@ -49,6 +49,14 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController {
         return view
     }()
     
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView()
+        spinner.hidesWhenStopped = true
+        spinner.color = .lightGray
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
     init(viewModel: AutocompleteViewModelInterface) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -84,6 +92,7 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController {
         // add subviews
         contentView.addSubview(searchBar)
         contentView.addSubview(searchResultsTableView)
+        contentView.addSubview(spinner)
         view.addSubview(contentView)
 
         // set up constraints
@@ -115,6 +124,9 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController {
             contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             contentView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            spinner.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
             searchBar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.topSpacing),
             searchBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.leftSpacing),
@@ -135,6 +147,8 @@ class SlackSearchEmployeesAutocompleteViewController : UIViewController {
             guard let self = self else {
                 return
             }
+            self.spinner.stopAnimating()
+            
             var snapshot = NSDiffableDataSourceSnapshot<searchResultTableViewSections, SlackEmployee>()
             snapshot.appendSections([searchResultTableViewSections.firstSection])
             snapshot.appendItems(self.viewModel.slackEmployees, toSection: searchResultTableViewSections.firstSection)
@@ -148,6 +162,7 @@ extension SlackSearchEmployeesAutocompleteViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // fetch the Slack employees for a given term
+        spinner.startAnimating()
         viewModel.fetchSlackEmployees(searchText)
         
         // Reload the tableview and if the search text is cleared, dismiss the keyboard

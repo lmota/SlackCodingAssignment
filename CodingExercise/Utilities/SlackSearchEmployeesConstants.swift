@@ -11,7 +11,7 @@ import UIKit
  * Struct for constants used in the application
  */
 struct Constants {
-    static let textFieldPlaceholder = "Search employees by name".localizedCapitalized
+    static let textFieldPlaceholder = "Search employees by name or userId".localizedCapitalized
     static let searchEmployeesViewControllerTitle = "Search Slack Employees".localizedCapitalized
     static let slackEmployeeCellIdentifier = "SlackEmployeeCustomCell"
     static let slackSearchEndpoint =  "https://mobile-code-exercise-a7fb88c7afa6.herokuapp.com/search"

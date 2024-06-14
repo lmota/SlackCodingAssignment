@@ -51,6 +51,14 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         return employeeStackView
     }()
     
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView()
+        spinner.hidesWhenStopped = true
+        spinner.color = .lightGray
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: Constants.slackEmployeeCellIdentifier)
         self.backgroundColor = Constants.cellBackgroundColor
@@ -65,6 +73,7 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         employeeAvatarImageView.image = UIImage(systemName: Constants.personSystemImageName)
         employeeName.text = ""
         employeeUserId.text = ""
+        spinner.stopAnimating()
     }
     
     override func updateConstraints() {
@@ -111,6 +120,7 @@ class SlackEmployeeTableViewCell: UITableViewCell {
         employeeStackView.addArrangedSubview(employeeUserId)
         
         self.contentView.addSubview(employeeStackView)
+        self.contentView.addSubview(spinner)
     }
 
 }
@@ -136,6 +146,7 @@ extension SlackEmployeeTableViewCell {
             return
         }
         
+        spinner.startAnimating()
         URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
             DispatchQueue.main.async { [weak self] in
                    
@@ -148,6 +159,7 @@ extension SlackEmployeeTableViewCell {
                    // If image received, set it in the cache and update ui
                    imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
                 self?.employeeAvatarImageView.image = imageToCache
+                self?.spinner.stopAnimating()
             }
         }.resume()
     }

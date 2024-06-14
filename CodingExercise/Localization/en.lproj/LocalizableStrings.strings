@@ -11,3 +11,4 @@
 "Failed to search the employees data" = "Failed to search the employees data. Please try again";
 "Internal error ocurred while searching employees" = "Internal error ocurred while searching employees. Please try again";
 "Invalid search term. Please try again" = "Invalid search term. Please try again";
+"Search employees by name or userId" = "Search employees by name or userId";
